@@ -37,11 +37,8 @@ let like = document.querySelector('.like')
 
 btns.forEach( async (item, index)=>{
     let source = item.getAttribute('data-music-name');
-    
     item.addEventListener('click',()=>{
-       
         audio.setAttribute('src', source);
-
     //     function playPauseMusic(){
 
     //    }
