@@ -174,7 +174,6 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    margin-right: 10px;
 }
 
 .singer h4{
@@ -528,7 +527,7 @@ footer > p{
     height: 5px;
     background-color: gray;
     position: fixed;
-    bottom: 13%;
+    bottom: 6.5%;
     transition: 0.2s;
 }
 .MusicPlayer:hover ~ .MusicDuration{

@@ -1,3 +1,4 @@
+
 window.addEventListener('scroll', ()=>{
     if (scrollY > 150) {
         document.querySelector('nav').classList.add('fixed')
@@ -28,15 +29,39 @@ window.addEventListener('scroll', ()=>{
 // }
 let icon = document.querySelectorAll('.playOrPause i.fa');
 let btns = document.querySelectorAll('.playOrPause');
-btns.forEach((item, index)=>{
+let audio = document.querySelector('.MusicPlayer audio')
+let like = document.querySelector('.like')
+
+
+
+
+btns.forEach( async (item, index)=>{
+    let source = item.getAttribute('data-music-name');
+    
     item.addEventListener('click',()=>{
-        if (icon[index].classList.contains('fa-play')) {
-            icon[index].classList.add('fa-pause');
-            icon[index].classList.remove('fa-play');
-        } else {
-            icon[index].classList.remove('fa-pause');
+       
+        audio.setAttribute('src', source);
+
+    //     function playPauseMusic(){
+
+    //    }
+    //    playPauseMusic()
+ 
+    if (icon[index].classList.contains('fa-play')) {
+        btns.forEach((item, index) =>{
+            icon[index].classList.remove('fa-pause')
+            icon[index].classList.add('fa-play')
+            audio.pause()
+        })
+        icon[index].classList.add('fa-pause');
+        icon[index].classList.remove('fa-play');
+        audio.play()
+      
+    } else{
+            icon[index].classList.remove('fa-pause')
             icon[index].classList.add('fa-play');
-        }
+            audio.pause()
+    }
     })
 })
 
