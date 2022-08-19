@@ -169,9 +169,13 @@ let artistsInformations = [
 
 
 for (let i = 0; i < artistsInformations.length; i++) {
+    let link = document.createElement('a')
+    SingersBlock.append(link)
+    link.setAttribute('href', './about-artist/about-artist.html')
+
     let singer = document.createElement('div')
     singer.className = "singer";
-    SingersBlock.append(singer);
+    link.append(singer);
     
     let singerImg = document.createElement("div")
     singerImg.className = 'singerImg'
@@ -206,6 +210,8 @@ inText.addEventListener('input', code => {
   }, delay, code)
 })
 
+let val312321 = localStorage.getItem('inputValue');
+console.log(val312321);
 function create() {
     let comment = document.createElement('div')
     comment.className = "comment"
