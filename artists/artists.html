@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Website favicon -->
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- Fontawesome icons -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
     <!-- Website styles -->
-    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./artists.css">
     <!-- Font google  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,7 @@
     <div class="container">
         <nav>
             <div class="logo">
-                <img src="./images/logo.png" alt="">
+                <img src="./logo.png" alt="">
             </div>
             <div class="searchMenu">
                 <input type="text" name="" id="" placeholder="Поиск по исполнителю и названию трека">
@@ -37,15 +36,27 @@
         </nav>
         <div class="MainBlock">
             <div class="BlockBody">
-                    <div class="singerBlock">
-                        <div class="titleBlock">
-                            <h3>Популярные исполнители</h3>
-                        </div>
-                        <div class="singers">
+                <div class="singerBlock">
+                    <div class="titleBlock">
+                        <h3>Популярные исполнители</h3>
+                    </div>
+                    <div class="singers">
 
+                    </div>
+                </div>
+                <div class="commentsBlock">
+                    <div class="commentBox">
+                        <h3>Комментарии</h3>
+                        <div class="NameInput">
+                            <input type="text" id="name" placeholder="Ваше имя">
+                        </div>
+                        <textarea id="comment" cols="30" rows="3" placeholder="Ваш комментарий" ></textarea>
+                        <div class="send">
+                            <button class="sendComment" >Отправить</button>
                         </div>
                     </div>
-                    </div>
+                </div>
+            </div>
             <div class="MusicCotegories">
                 <ul class="list">
                     <li>

@@ -25,7 +25,6 @@ h3:hover{
 .liked{
     transition-delay: 0.3s;
     color: #FC5D5D;
-    -webkit-text-stroke: none;
 }
 
 /* extra styles end */
@@ -106,14 +105,13 @@ nav{
 .SignIn:hover{
     border: 2px solid #ffde00;
 }
-
 .MainBlock{
     width: 100%;
     height: auto;
     font-family: 'Roboto', sans-serif;
     border: 1px solid red;
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 75% 25%;
     padding: 10px 0 0 0;
 }
 
@@ -124,18 +122,17 @@ nav{
 .BlockBody{
     margin-right: 5px;
     /* height: 100%; */
-    padding: 25px;
+    padding: 20px;
 }
 .MusicCotegories{
     margin-left: 5px;
-    padding: 25px;
+    padding: 20px;
 }
 .MusicCotegories h3{
     margin-top: 15px;
 }
 .singerBlock{
     width: 100%;
-    height: 250px;
     padding: 25px;
     border-bottom: 2px solid #dfdcdc;
 }
@@ -151,36 +148,27 @@ nav{
     text-decoration: none;
     color: #456690;
 }
-
-/* .singers{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    flex-wrap: wrap;
-    overflow: hidden;
-} */
 .singers{
     width: 100%;
-    max-height: 170px;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
 }
 
 .singer{
     height: 170px;
-    max-width: 130px;
+    max-width: 140px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    text-align: center;
+    margin-right: 5px;
 }
 
 .singer h4{
-    font-size: 14px;
-    line-height: 40px;
+    font-size: 13px;
 }
 
 .singerImg{
@@ -224,161 +212,6 @@ nav{
 
 .MusicsList > .titleBlock{
     margin-bottom: 15px;
-}
-
-.music{
-    width: 100%;
-    height: 50px;
-    margin-top: 6px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.PlayPart{
-    height: 100%;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-}
-
-.playOrPause, .download{
-    width: 40px;
-    height: 40px;
-    border: 2px solid #a5a5a5;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #456690;
-    margin-right: 5%;
-    cursor: pointer;
-}
-
-.playOrPause:hover, .download:hover{
-    border: 2px solid #456690;
-}
-
-.MusicSettings{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.MusicSettings span{
-    font-size: 14px;
-}
-.like, .dislike, .addPlaylist, .audioDuration{
-    width: 25%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: #999;
-}
-
-.like i, .dislike i{
-    -webkit-text-stroke: 2px #999;
-    font-size: 18px;
-    color: transparent;
-}
-.like i:hover, .dislike i:hover{
-    -webkit-text-stroke: 2px #FC5D5D;
-    cursor: pointer;
-}
-
-.addPlaylist i{
-    font-size: 21px;
-}
-.addPlaylist i:hover{
-    color: #3E6594;
-}
-
-.download{
-    border-color: transparent;
-    display: none;
-}
-.dislike, .like{
-    opacity: 0;
-}
-
-.music:hover .dislike{
-    opacity: 1;
-}
-.music:hover .like{
-    opacity: 1;
-}
-
-.music:hover .audioDuration span{
-    display: none;
-}
-.music:hover .download{
-    display: flex;
-}
-
-.download i{
-    font-weight: 900;
-    font-size: 16px;
-}
-.MusicName h4, span{
-    font-size: 15px;
-}
-
-
-footer{
-    padding: 25px;
-}
-.socialNetworks{
-    margin-top: 25px;
-    display: flex;
-}
-.icon i{
-    font-family: FontAwesome;
-}
-
-.icon{
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5px;
-    color: #fff;
-}
-
-.vk{
-    background-color: #0077ff;/*#278CFF*/
-}
-.vk:hover{
-    background-color: #278CFF;
-}
-
-.odnoklasnik{
-    background-color: #ff5e00;/*#EE884E*/
-}
-.odnoklasnik:hover{
-    background-color: #EE884E;
-}
-.twitter{
-    background-color: #00bbff;/*#27B9F0*/
-}
-.twitter:hover{
-    background-color: #27B9F0;
-}
-.telegram i{
-    font-size: 25px;
-    color: #3b9de9;/*#7CB6E1*/
-}
-.telegram i:hover{
-    color: #7CB6E1;
-}
-
-footer > p{
-    font-size: 12px;
-    margin-top: 15%;
 }
 .list{
     width: 100%;
@@ -451,6 +284,20 @@ footer > p{
 .circle i{
     color: #db9b86;
 }
+.icon i{
+    font-family: FontAwesome;
+}
+
+.icon{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    color: #fff;
+}
 
 .MusicGenres{
     width: 100%;
@@ -510,36 +357,72 @@ footer > p{
     text-decoration: none;
     color: #314865;
 }
-.MusicPlayer{
+
+.commentsBlock{
     width: 100%;
-    height: 60px;
-    background-color: #fff323;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
     border: 1px solid red;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-.MusicDuration{
-    width: 100%;
-    height: 5px;
-    background-color: gray;
-    position: fixed;
-    bottom: 6.5%;
-    transition: 0.2s;
-}
-.MusicPlayer:hover ~ .MusicDuration{
-    height: 12px;
-}
-.MusicPlayerSettings{
-    height: 100%;
-    background-color: #f00f;
 }
 
+.commentBox{
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px;
+}
+.commentBox h3{
+    font-size: 14px;
+}
+.NameInput{
+    border-radius: 20px;
+    padding: 10px;
+    width: 30%;
+    border: 2px solid #E3E3E3;
+}
+#name, #comment{
+    outline: none;
+    border: none;
+}
+#comment{
+    clear: left;
+    resize: horizontal;
+    border: 2px solid #E3E3E3;
+    min-height: 40px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+#name::placeholder, #comment::placeholder{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.send{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+.sendComment{
+    padding: 10px 15px;
+    border: 2px solid #3E6594;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-right: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.sendComment:hover{
+    background-color: #FCEE7E;
+}
+.comment{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #E3E3E3;
+}
 @media (max-width: 1310px) {
     .container{
         max-width: 1200px;
@@ -578,3 +461,4 @@ footer > p{
         overflow: hidden;
     }
 }
+

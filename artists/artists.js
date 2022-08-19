@@ -193,3 +193,35 @@ for (let i = 0; i < artistsInformations.length; i++) {
     singer.append(artistName);
     artistName.innerHTML = artistsInformations[i].Name
 }
+let commentsBlock = document.querySelector('commentsBlock')
+const inText = document.getElementById('comment')
+const outText = document.getElementById('outText')
+const delay = 1000
+
+let timer
+inText.addEventListener('input', code => {
+  clearTimeout(timer);
+  timer = setTimeout(x => {
+    localStorage.setItem('inputValue', inText.value)
+  }, delay, code)
+})
+
+function create() {
+    let comment = document.createElement('div')
+    comment.className = "comment"
+    commentsBlock.append(comment)
+
+    let fromWhom = document.createElement('div')
+    fromWhom.className = "fromWhom"
+    comment.append(fromWhom)
+
+    let who = document.createElement('h4');
+    fromWhom.append(who);
+    
+    let text = document.createElement('p');
+    comment.append(text)
+    text.innerHTML = localStorage.getItem('inputValue')
+}
+
+
+document.querySelector('.sendComment').addEventListener('click', create)

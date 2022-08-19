@@ -32,15 +32,11 @@ let btns = document.querySelectorAll('.playOrPause');
 let audio = document.querySelector('.MusicPlayer audio')
 let like = document.querySelector('.like')
 
-
-
-
 btns.forEach( async (item, index)=>{
     let source = item.getAttribute('data-music-name');
     item.addEventListener('click',()=>{
-        audio.setAttribute('src', source);
     //     function playPauseMusic(){
-
+        audio.setAttribute('src', source);
     //    }
     //    playPauseMusic()
  
@@ -62,10 +58,11 @@ btns.forEach( async (item, index)=>{
     })
 })
 
-// let likeBtn = document.querySelectorAll('.like i');
-// likeBtn.forEach((item, index)=>{
-//     item.addEventListener('click',()=>{
-//         item[1].classList.toggle('liked')
-//     })
-// })
+let likeBtn = document.querySelectorAll('.like i');
+let likeNumber = document.querySelectorAll('.like span');
+likeBtn.forEach((item, index)=>{
+    item.addEventListener('click',function liked(){
+        this.classList.toggle('liked')
+    })
+})
 
