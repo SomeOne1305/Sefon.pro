@@ -66,3 +66,14 @@ likeBtn.forEach((item, index)=>{
     })
 })
 
+function setProgress(e){
+    const height = this.clientHeight;
+    const clickY = e.offsetY
+    const volume = audio.volume
+
+    audio.volume = (clickY / height) * volume;
+    document.querySelector('.volumePercent').style.height = audio.volume * 100 + "%";
+
+}
+
+document.querySelector('.volume').addEventListener('click', setProgress)

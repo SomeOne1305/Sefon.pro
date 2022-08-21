@@ -511,6 +511,7 @@ footer > p{
     color: #314865;
 }
 .MusicPlayer{
+    position: relative;
     width: 100%;
     height: 60px;
     background-color: #fff323;
@@ -525,21 +526,117 @@ footer > p{
     right: 0;
 }
 .MusicDuration{
+    position: absolute;
+    bottom: 13%;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 5px;
     background-color: gray;
-    position: fixed;
-    bottom: 6.5%;
     transition: 0.2s;
+    z-index: 0;
+    position: fixed;
 }
 .MusicPlayer:hover ~ .MusicDuration{
     height: 12px;
 }
 .MusicPlayerSettings{
     height: 100%;
-    background-color: #f00f;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
-
+.leftSide{
+    height: 100%;
+    width: 30%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.rightSide{
+    width: 20%;
+    height: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.pauseAndplay{
+    font-size: 25px;
+}
+.menu{
+    font-size: 22px;
+}
+.voice{
+    position: relative;
+}
+.voiceCont{
+    height: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 100%;
+    z-index: 99;
+    display: none;
+    border: 1px solid red;
+}
+.voiceCont:hover{
+    display: flex;
+}
+.voiceController{
+    width: 40px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: #3e6594;
+}
+.extraSettings{
+    width: 100%;
+    height: 40px;
+    border-bottom:1px solid white;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.volumeContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.square{
+    height: 10px;
+    width: 10px;
+    background-color: #3e6594;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: -5px;
+}
+.volume{
+    width: 7px;
+    height: 80%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+    background-color: #7398c5;
+}
+.volumePercent{
+    width: 100%;
+    height: 10%;
+    background-color: #fff323;
+}
+.voiceCont:hover{
+    display: flex;
+}
+.voice:hover .voiceCont{
+    display: flex;
+}
 @media (max-width: 1310px) {
     .container{
         max-width: 1200px;
