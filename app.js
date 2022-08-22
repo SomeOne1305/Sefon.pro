@@ -76,4 +76,8 @@ function setProgress(e){
 
 }
 
-document.querySelector('.volume').addEventListener('click', setProgress)
+document.querySelector('.volume').addEventListener('click', setProgress);
+
+document.querySelector('.voice').addEventListener('click', ()=>{
+    document.querySelector('.voiceController').classList.toggle('visible')
+})

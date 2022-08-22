@@ -21,6 +21,9 @@ h3:hover{
     margin: 0 auto;
     z-index: 11;
 }
+.visible{
+    display: flex;
+}
 
 .liked{
     transition-delay: 0.3s;
@@ -537,6 +540,9 @@ footer > p{
     z-index: 0;
     position: fixed;
 }
+.MusicDuration:hover{
+    height: 12px;
+}
 .MusicPlayer:hover ~ .MusicDuration{
     height: 12px;
 }
@@ -570,27 +576,20 @@ footer > p{
 }
 .voice{
     position: relative;
+    cursor: pointer;
 }
-.voiceCont{
-    height: 300px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: absolute;
-    bottom: 100%;
-    z-index: 99;
-    display: none;
-    border: 1px solid red;
-}
-.voiceCont:hover{
-    display: flex;
-}
+
 .voiceController{
     width: 40px;
     height: 200px;
     display: flex;
     flex-direction: column;
     background-color: #3e6594;
+    position: absolute;
+    bottom: 300%;
+    left: -50%;
+    right: 50%;
+    display: none;
 }
 .extraSettings{
     width: 100%;
@@ -625,6 +624,7 @@ footer > p{
     align-items: center;
     flex-direction: column;
     background-color: #7398c5;
+    cursor: pointer;
 }
 .volumePercent{
     width: 100%;
@@ -632,10 +632,10 @@ footer > p{
     background-color: #fff323;
 }
 .voiceCont:hover{
-    display: flex;
+    visibility: visible;
 }
 .voice:hover .voiceCont{
-    display: flex;
+    visibility: visible;
 }
 @media (max-width: 1310px) {
     .container{
