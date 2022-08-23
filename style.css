@@ -529,21 +529,18 @@ footer > p{
     right: 0;
 }
 .MusicDuration{
-    position: absolute;
-    bottom: 13%;
-    left: 0;
-    right: 0;
+    position: fixed;
     width: 100%;
     height: 5px;
     background-color: gray;
     transition: 0.2s;
-    z-index: 0;
-    position: fixed;
+    position: absolute;
+    bottom: 100%;
 }
 .MusicDuration:hover{
     height: 12px;
 }
-.MusicPlayer:hover ~ .MusicDuration{
+.MusicPlayer:hover  .MusicDuration{
     height: 12px;
 }
 .MusicPlayerSettings{

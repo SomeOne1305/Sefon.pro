@@ -48,15 +48,20 @@ btns.forEach( async (item, index)=>{
         })
         icon[index].classList.add('fa-pause');
         icon[index].classList.remove('fa-play');
+        document.querySelector('.pauseAndplay i.fa').classList.remove('fa-play')
+        document.querySelector('.pauseAndplay i.fa').classList.add('fa-pause')
         audio.play()
       
     } else{
             icon[index].classList.remove('fa-pause')
             icon[index].classList.add('fa-play');
+            document.querySelector('.pauseAndplay i.fa').classList.add('fa-play')
+            document.querySelector('.pauseAndplay i.fa').classList.remove('fa-pause')
             audio.pause()
     }
     })
 })
+document.querySelector('.pauseAndplay').addEventListener
 
 let likeBtn = document.querySelectorAll('.like i');
 let likeNumber = document.querySelectorAll('.like span');
