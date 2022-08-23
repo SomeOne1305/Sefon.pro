@@ -197,8 +197,9 @@ for (let i = 0; i < artistsInformations.length; i++) {
     singer.append(artistName);
     artistName.innerHTML = artistsInformations[i].Name
 }
-let commentsBlock = document.querySelector('commentsBlock')
+let commentsBlock = document.querySelector('.commentsBlock')
 const inText = document.getElementById('comment')
+const Name = document.getElementById('name')
 const outText = document.getElementById('outText')
 const delay = 1000
 
@@ -209,9 +210,14 @@ inText.addEventListener('input', code => {
     localStorage.setItem('inputValue', inText.value)
   }, delay, code)
 })
+let time
+Name.addEventListener('input', code => {
+  clearTimeout(timer);
+  timer = setTimeout(x => {
+    localStorage.setItem('inpValue',Name.value)
+  }, delay, code)
+})
 
-let val312321 = localStorage.getItem('inputValue');
-console.log(val312321);
 function create() {
     let comment = document.createElement('div')
     comment.className = "comment"
@@ -220,8 +226,8 @@ function create() {
     let fromWhom = document.createElement('div')
     fromWhom.className = "fromWhom"
     comment.append(fromWhom)
-
     let who = document.createElement('h4');
+    who.innerHTML = localStorage.getItem('inpValue')
     fromWhom.append(who);
     
     let text = document.createElement('p');

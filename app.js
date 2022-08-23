@@ -61,7 +61,15 @@ btns.forEach( async (item, index)=>{
     }
     })
 })
-document.querySelector('.pauseAndplay').addEventListener
+// document.querySelector('.pauseAndplay').addEventListener('click', ()=>{
+//     btns.forEach( async (item, index)=>{
+//         if () {
+            
+//         } else {
+            
+//         }
+//     })
+// })
 
 let likeBtn = document.querySelectorAll('.like i');
 let likeNumber = document.querySelectorAll('.like span');
@@ -74,10 +82,8 @@ likeBtn.forEach((item, index)=>{
 function setProgress(e){
     const height = this.clientHeight;
     const clickY = e.offsetY
-    const volume = audio.volume
 
-    audio.volume = (clickY / height) * volume;
-    document.querySelector('.volumePercent').style.height = audio.volume * 100 + "%";
+    console.log( Math.floor((clickY / height) * 100) + '%');
 
 }
 
