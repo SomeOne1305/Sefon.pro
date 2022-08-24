@@ -5,5 +5,6 @@ input.addEventListener('input', ()=>{
 })
 
 $( '.slider' ).on( 'input', function( ) {
-$( this ).css( 'background', 'linear-gradient(to right, #ffde01 0%, #ffde01 '+this.value +'%, #7398c5 ' + this.value + '%, #7398c5 100%)' );
+$( this ).css( 'background', 'linear-gradient(to right, #FCEE7E 0%, #FCEE7E '+this.value +'%, transparent ' + this.value + '%, transparent 100%)' );
 } );
+

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
     <!-- Website styles -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Make Responsive -->
+    <link rel="stylesheet" href="./css/make-responsive.css">
     <!-- Font google  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -555,15 +557,17 @@
                 <h5>HQ</h5>
                 <div class="voice">
                     <i class="fa fa-volume-high"></i>
-                    <div class="voiceController">
-                        <div class="extraSettings">
-                            <i class="fa fa-sliders"></i>
-                        </div>
-                        <div class="volumeContainer">
-                            <div class="volume">
-                                <input type="range" name="" id="range" minlength="1" maxlength="100" value="100" class="slider">
+                    <div class="voiceContent">
+                        <div class="voiceController">
+                            <div class="extraSettings">
+                                <i class="fa fa-sliders"></i>
                             </div>
-                            <div class="square"></div>
+                            <div class="volumeContainer">
+                                <div class="volume">
+                                    <input type="range" name="" id="range" minlength="1" maxlength="100" value="100" class="slider">
+                                </div>
+                                <div class="square"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -580,7 +584,11 @@
         </div>
         <audio></audio>
         <div class="MusicDuration">
-            
+            <div class="musicDurationContainer">
+                <span class="moments">00:02</span>
+                <div class="durationProgress"></div>
+                <span class="fullDuration">02:44</span>
+            </div>
         </div>
     </div>
 

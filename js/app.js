@@ -31,6 +31,7 @@ btns.forEach( async (item, index)=>{
         icon[index].classList.remove('fa-play');
         document.querySelector('.pauseAndplay i.fa').classList.remove('fa-play')
         document.querySelector('.pauseAndplay i.fa').classList.add('fa-pause')
+        document.querySelector('.fullDuration').innerHTML = Math.floor(audio.duration)
         audio.play()
       
     } else{
@@ -61,3 +62,19 @@ likeBtn.forEach((item, index)=>{
 //     console.log((clickY / height) *100  + '%')
 // }
 // document.querySelector('.volume').addEventListener('click', setProgress)
+
+let hearts = document.querySelectorAll('.like');
+let span = document.querySelectorAll('.like span');
+span.forEach(item=>{
+   item.innerHTML = 0;
+
+})
+hearts.forEach((item)=>{
+    item.addEventListener('click',()=>{
+        item.querySelector('i').style.color = "#FC5D5D"
+        item.querySelector('i').style.webkitTextStroke = "none"
+        let number = 0;
+        item.querySelector('span').innerHTML = number;
+        item.querySelector('span').innerHTML = +(number + 1)
+    })
+})

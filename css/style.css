@@ -283,7 +283,7 @@ nav{
 }
 
 .like i, .dislike i{
-    -webkit-text-stroke: 2px #999;
+    -webkit-text-stroke: 2px #FC5D5D;
     font-size: 18px;
     color: transparent;
 }
@@ -531,16 +531,16 @@ footer > p{
     position: fixed;
     width: 100%;
     height: 5px;
-    background-color: gray;
+    background-color: #E5E5E5;
     transition: 0.2s;
     position: absolute;
     bottom: 100%;
 }
 .MusicDuration:hover{
-    height: 12px;
+    height: 15px;
 }
 .MusicPlayer:hover  .MusicDuration{
-    height: 12px;
+    height: 15px;
 }
 .MusicPlayerSettings{
     height: 100%;
@@ -580,17 +580,27 @@ footer > p{
     position: relative;
     cursor: pointer;
 }
-
+.voice:hover .voiceContent{
+    visibility: visible;
+}
+.voiceContent{
+    width: 40px;
+    height: 240px;
+    display: flex;
+    align-items: start;
+    z-index: 99;
+    position: absolute;
+    bottom: 100%;
+    left: -50%;
+    right: 50%;
+    visibility: hidden;
+}
 .voiceController{
     width: 40px;
     height: 200px;
     display: flex;
     flex-direction: column;
     background-color: #3e6594;
-    position: absolute;
-    bottom: 330%;
-    left: -50%;
-    right: 50%;
 }
 .extraSettings{
     width: 100%;
@@ -624,44 +634,44 @@ footer > p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #7398c5;
 }
 
 
-@media (max-width: 1310px) {
-    .container{
-        max-width: 1200px;
-        margin: 0 auto;
-        margin-top: 150px;
-    }
-    .fixed{
-        max-width: 1200px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        z-index: 11;
-    }
+.musicDurationContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
 }
-@media (max-width: 1200px){
-    .container{
-        max-width: 100%;
-        margin: 0;
-        margin-top: 150px;
-    }
-    .fixed{
-        max-width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        z-index: 11;
-    }
-    .singers{
-        max-width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden;
-    }
+.moments{
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    visibility: hidden;
+}
+.fullDuration{
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    visibility: hidden;
+}
+.durationProgress{
+    height: 100%;
+    width: 30%;
+    background-color: #FFDC65;
+}
+
+.MusicPlayer:hover .MusicDuration .musicDurationContainer .moments{
+    visibility: visible;
+}
+.MusicPlayer:hover .MusicDuration .musicDurationContainer .fullDuration{
+    visibility: visible;
 }
