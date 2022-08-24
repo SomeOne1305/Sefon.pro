@@ -8,25 +8,6 @@ window.addEventListener('scroll', ()=>{
         document.querySelector('.MainBlock').style.marginTop = "0"
     }
 })
-
-// document.querySelector('.playOrPause').addEventListener('click', ()=>{
-//     if (document.querySelector('.playOrPause i.fa').classList.contains('fa-play')) {
-//         document.querySelector('.playOrPause i.fa').classList.add('fa-pause')
-//         document.querySelector('.playOrPause i.fa').classList.remove('fa-play')
-//     } else {
-//         document.querySelector('.playOrPause i.fa').classList.remove('fa-pause')
-//         document.querySelector('.playOrPause i.fa').classList.add('fa-play')
-//     }
-// })
-// function change() {
-//     if (document.querySelector('.playOrPause i.fa').classList.contains('fa-play')) {
-//         document.querySelector('.playOrPause i.fa').classList.add('fa-pause')
-//         document.querySelector('.playOrPause i.fa').classList.remove('fa-play')
-//     } else {
-//         document.querySelector('.playOrPause i.fa').classList.remove('fa-pause')
-//         document.querySelector('.playOrPause i.fa').classList.add('fa-play')
-//     }
-// }
 let icon = document.querySelectorAll('.playOrPause i.fa');
 let btns = document.querySelectorAll('.playOrPause');
 let audio = document.querySelector('.MusicPlayer audio')
@@ -61,15 +42,8 @@ btns.forEach( async (item, index)=>{
     }
     })
 })
-// document.querySelector('.pauseAndplay').addEventListener('click', ()=>{
-//     btns.forEach( async (item, index)=>{
-//         if () {
-            
-//         } else {
-            
-//         }
-//     })
-// })
+document.querySelector('.pauseAndplay').addEventListener('click', ()=>{
+})
 
 let likeBtn = document.querySelectorAll('.like i');
 let likeNumber = document.querySelectorAll('.like span');
@@ -79,16 +53,11 @@ likeBtn.forEach((item, index)=>{
     })
 })
 
-function setProgress(e){
-    const height = this.clientHeight;
-    const clickY = e.offsetY
+// function setProgress(e){
+//     const height = this.clientHeight;
+//     const clickY = e.offsetY
 
-    console.log( Math.floor((clickY / height) * 100) + '%');
-
-}
-
-document.querySelector('.volume').addEventListener('click', setProgress);
-
-document.querySelector('.voice').addEventListener('click', ()=>{
-    document.querySelector('.voiceController').classList.toggle('visible')
-})
+//    document.querySelector('.volumePercent').style.height = (clickY / height) *100  + '%';
+//     console.log((clickY / height) *100  + '%')
+// }
+// document.querySelector('.volume').addEventListener('click', setProgress)
