@@ -7,50 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="range" name="" id="range" minlength="1" orient="vertical" maxlength="100" value="100" class="slider">
-    <style>
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-.slider {
-  -webkit-appearance: none;
-  height: 25px;
-  width: 240px;
-  background: #ffde01;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  transform: rotate(-90deg);
-}
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-    width: 1px;
-    height: 100%;
-  background: #04AA6D;
-  cursor: pointer;
-}
+  <style>
 
-.slider::-moz-range-thumb {
-    width: 1px;
-    height: 100%;
-  background: #04AA6D;
-  cursor: pointer;
-}
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-    <script>
-        let input = document.querySelector('#range');
-        input.addEventListener('change', ()=>{
-            console.log(input.value / 100);
-        })
-        $( '.slider' ).on( 'input', function( ) {
-        $( this ).css( 'background', 'linear-gradient(to right, #ffde01 0%, #ffde01 '+this.value +'%, #fff ' + this.value + '%, white 100%)' );
-        } );
-    </script>
+  </style>
+  <audio src="./musics/music1.mp3" controls></audio>
+  <span></span>
+  <script>
+    let span = document.querySelector('span');
+    let audio = document.querySelector('audio')
+
+    let curT = audio.currentTime;
+    let seconds = curT%60;
+    let min = curT/60
+    setInterval(()=>{
+      span.innerHTML = `0${min}:0${seconds}`
+    },1000)
+    console.log(seconds, min);
+  </script>
 </body>
 </html>
