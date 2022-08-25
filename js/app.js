@@ -77,7 +77,7 @@ function fullDur() {
     let sec = Math.floor(duration%60);
     if (min < 10 && sec < 10) {
         document.querySelector('.fullDuration').innerHTML = `0${min}`+ ':' +`0${sec}`
-    }else if(min < 10 && sec > 10){
+    }else if(min < 10 && sec >= 10){
         document.querySelector('.fullDuration').innerHTML = `0${min}` + ':' + `${sec}`
     }else {
         document.querySelector('.fullDuration').innerHTML = `${min}` + ':' + `${sec}`
@@ -105,14 +105,22 @@ btns.forEach((item, index)=>{
 
     
 })
-
-let likeBtn = document.querySelectorAll('.like i');
-let likeNumber = document.querySelectorAll('.like span');
-likeBtn.forEach((item, index)=>{
-    item.addEventListener('click',function liked(){
-        this.classList.toggle('liked')
-    })
-})
+// document.querySelector('pauseAndplay').addEventListener('click', ()=>{
+//     btns.forEach((item,index)=>{
+//         if (item.classList.contains('isPause')) {
+//             pauseMusic(item, index)
+//         }else{
+//             playMusic(item, index)
+//         }
+//     })
+// })
+// let likeBtn = document.querySelectorAll('.like i');
+// let likeNumber = document.querySelectorAll('.like span');
+// likeBtn.forEach((item, index)=>{
+//     item.addEventListener('click',function liked(){
+//         this.classList.toggle('liked')
+//     })
+// })
 
 // function setProgress(e){
 //     const height = this.clientHeight;
