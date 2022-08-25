@@ -71,16 +71,26 @@ function pauseMusic(item, index) {
             audio.pause()
             item.classList.add('isPause')
 }
+function fullDur() {
+    let duration = audio.duration
+    let min = Math.floor(duration/60);
+    let sec = Math.floor(duration%60);
+    if (min < 10 && sec < 10) {
+        document.querySelector('.fullDuration').innerHTML = `0${min}`+ ':' +`0${sec}`
+    }else if(min < 10 && sec > 10){
+        document.querySelector('.fullDuration').innerHTML = `0${min}` + ':' + `${sec}`
+    }else {
+        document.querySelector('.fullDuration').innerHTML = `${min}` + ':' + `${sec}`
+    }
+}
 btns.forEach((item, index)=>{
    
     item.addEventListener('click', ()=>{
         if (item.querySelector('i.fa').classList.contains('fa-play')) {
-            
             if(item.classList.contains('isActive')){
-                
+                fullDur();
                 if (item.classList.contains('isPause')) {
                     playMusic(item, index)
-                    
                 }else{
                     pauseMusic(item, index)
                 }
@@ -95,9 +105,6 @@ btns.forEach((item, index)=>{
 
     
 })
-document.querySelector('.pauseAndplay').addEventListener('click', ()=>{
-})
-
 
 let likeBtn = document.querySelectorAll('.like i');
 let likeNumber = document.querySelectorAll('.like span');

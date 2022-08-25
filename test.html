@@ -7,22 +7,83 @@
     <title>Document</title>
 </head>
 <body>
+  <svg viewBox="0 0 36 36" class="circular-chart">
+    <path class="circle"
+      stroke-dasharray="100, 100"
+      d="M18 2.0845
+        a 15.9155 15.9155 0 0 1 0 31.831
+        a 15.9155 15.9155 0 0 1 0 -31.831"
+    />
+    <text x="7" y="20" style="font-size: 9px; font-family: consolas;" fill="black" class="text"></text>
+  </svg>
   <style>
+  .circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+  }
 
-  </style>
-  <audio src="./musics/music1.mp3" controls></audio>
-  <span></span>
-  <script>
-    let span = document.querySelector('span');
-    let audio = document.querySelector('audio')
+.circle {
+  stroke: #4CC790;
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 8s ease-out forwards;
+}
 
-    let curT = audio.currentTime;
-    let seconds = curT%60;
-    let min = curT/60
-    setInterval(()=>{
-      span.innerHTML = `0${min}:0${seconds}`
-    },1000)
-    console.log(seconds, min);
-  </script>
+/* @keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+  100%{
+    stroke-dasharray: 100 100;
+  }
+} */
+</style>
+<audio src="./musics/music1.mp3" controls></audio>
+<span id="output"></span>
+<script>
+let a = document.querySelector('audio');
+let chart = document.querySelector('.circular-chart');
+let output = document.getElementById('output')
+let text = document.querySelector('text');
+function na() {
+  // output.innerHTML = Math.floor(a.currentTime);
+  if (Math.floor(a.currentTime) < 10) {
+    text.innerHTML =`00:0${Math.floor(a.currentTime)}`;
+  } else if(Math.floor(a.currentTime) > 10 || Math.floor(a.currentTime) == 10){
+    text.innerHTML =`00:${Math.floor(a.currentTime)}`;
+  }else if(Math.floor(a.currentTime) > 60){
+    // let min = Math.floor(a.currentTime/60)
+    // let sec = Math.floor(a.currentTime%60)
+      if (a.currentTime%60 < 10) {
+        text.innerHTML = `0${Math.floor(a.currentTime/60)}:0${Math.floor(a.currentTime%60)}`
+      } else {
+        text.innerHTML = `0${Math.floor(a.currentTime/60)}: ${Math.floor(a.currentTime%60)}`
+      }
+    
+  }
+  }
+
+
+let d =a.duration
+
+
+
+
+function update(e) {
+    const {duration, currentTime} = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    chart.querySelector('path').setAttribute('stroke-dasharray', `${progressPercent}, 100`)
+    // if (currentTime < 10) {
+    //   document.querySelector('text').innerHTML = `00:0${Math.floor(currentTime)}`
+    // }else if(){
+
+    // }
+    na()
+  }
+a.addEventListener('timeupdate', update)
+</script>
 </body>
 </html>
