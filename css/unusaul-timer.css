@@ -1,0 +1,24 @@
+.text{
+    font-family: consolas;
+    font-size: 10px;
+    text-align: center;
+  }
+  .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.circle {
+stroke: #4CC790;
+fill: none;
+stroke-width: 2.8;
+stroke-linecap: round;
+animation: progress 8s ease-out forwards;
+}

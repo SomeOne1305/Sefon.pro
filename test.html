@@ -7,23 +7,60 @@
     <title>Document</title>
 </head>
 <body>
-  <svg viewBox="0 0 36 36" class="circular-chart">
-    <path class="circle"
-      stroke-dasharray="100, 100"
-      d="M18 2.0845
-        a 15.9155 15.9155 0 0 1 0 31.831
-        a 15.9155 15.9155 0 0 1 0 -31.831"
-    />
-    <text x="7" y="20" style="font-size: 9px; font-family: consolas;" fill="black" class="text"></text>
-  </svg>
+  <div class="timer">
+    <b>&#x274C;</b>
+    <svg viewBox="0 0 36 36" class="circular-chart">
+      <path class="circle-bg"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <path class="circle"
+        stroke-dasharray="100, 100"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <text x="4.3" y="20.35"  class="text">00:00</text>
+    </svg>
+  </div>
   <style>
+    .timer{
+      position: relative;
+      width: 150px;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.200);
+      position: fixed;
+      top: -100%;
+      left: 45%;
+      opacity: 0;
+      transition: 1s linear;
+    }
+    b{
+      cursor:pointer;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+    .text{
+      font-family: consolas;
+      font-size: 10px;
+      text-align: center;
+    }
+    .circle-bg {
+      fill: none;
+      stroke: #eee;
+      stroke-width: 3.8;
+    }
   .circular-chart {
     display: block;
     margin: 10px auto;
-    max-width: 80%;
-    max-height: 250px;
+    max-width: 130px;
+    max-height: 130px;
   }
-
+span:hover{
+  cursor:pointer;
+}
 .circle {
   stroke: #4CC790;
   fill: none;
@@ -42,7 +79,8 @@
 } */
 </style>
 <audio src="./musics/music1.mp3" controls></audio>
-<span id="output"></span>
+<span id="play">Play</span>
+<span id="pause">pause</span>
 <script>
 let a = document.querySelector('audio');
 let chart = document.querySelector('.circular-chart');
@@ -66,21 +104,30 @@ function na() {
   }
   }
 
+document.getElementById('play').addEventListener('click', ()=>{
+    a.play()
+    document.querySelector('.timer').style.top = '1%';
+    document.querySelector('.timer').style.opacity = 1;
+
+})
+document.getElementById('pause').addEventListener('click', ()=>{
+  a.pause()    
+  document.querySelector('.timer').style.top = '-100%';
+    document.querySelector('.timer').style.opacity = 0;
+})
 
 let d =a.duration
-
+document.querySelector('b').addEventListener('click', ()=>{
+  document.querySelector('.timer').style.top = '-100%';
+    document.querySelector('.timer').style.opacity = 0;
+})
 
 
 
 function update(e) {
     const {duration, currentTime} = e.srcElement;
     const progressPercent = (currentTime / duration) * 100;
-    chart.querySelector('path').setAttribute('stroke-dasharray', `${progressPercent}, 100`)
-    // if (currentTime < 10) {
-    //   document.querySelector('text').innerHTML = `00:0${Math.floor(currentTime)}`
-    // }else if(){
-
-    // }
+    chart.querySelector('.circle').setAttribute('stroke-dasharray', `${progressPercent}, 100`)
     na()
   }
 a.addEventListener('timeupdate', update)
