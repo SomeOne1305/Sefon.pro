@@ -25,6 +25,13 @@
     </svg>
   </div>
   <style>
+    body{
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+    }
     .timer{
       position: relative;
       width: 150px;
@@ -77,10 +84,31 @@ span:hover{
     stroke-dasharray: 100 100;
   }
 } */
+#play, #pause{
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family:  Arial, sans-serif;
+  margin: 15px;
+}
+#pause{
+  background-color: rgb(255, 68, 0);
+}
+#pause:active{
+  background-color: rgb(213, 57, 0);
+}
+#play{
+  background-color: rgb(40, 255, 40);
+}
+#play:active{
+  background-color: rgb(20, 249, 20);
+}
 </style>
 <audio src="./musics/music1.mp3" controls></audio>
-<span id="play">Play</span>
-<span id="pause">pause</span>
+<span id="play">Play &#9654;</span>
+<span id="pause">pause &#9208;</span>
 <script>
 let a = document.querySelector('audio');
 let chart = document.querySelector('.circular-chart');
