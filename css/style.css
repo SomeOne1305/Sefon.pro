@@ -651,6 +651,7 @@ footer > p{
     align-items: center;
     position: relative;
     font-family: 'Roboto', sans-serif;
+    cursor: pointer;
 }
 .moments{
     font-size: 10px;
@@ -670,7 +671,7 @@ footer > p{
 }
 .durationProgress{
     height: 100%;
-    width: 30%;
+    width: 0%;
     background-color: #FFDC65;
 }
 

@@ -116,20 +116,7 @@ let output = document.getElementById('output')
 let text = document.querySelector('text');
 function na() {
   // output.innerHTML = Math.floor(a.currentTime);
-  if (Math.floor(a.currentTime) < 10) {
-    text.innerHTML =`00:0${Math.floor(a.currentTime)}`;
-  } else if(Math.floor(a.currentTime) > 10 || Math.floor(a.currentTime) == 10){
-    text.innerHTML =`00:${Math.floor(a.currentTime)}`;
-  }else if(Math.floor(a.currentTime) > 60){
-    // let min = Math.floor(a.currentTime/60)
-    // let sec = Math.floor(a.currentTime%60)
-      if (a.currentTime%60 < 10) {
-        text.innerHTML = `0${Math.floor(a.currentTime/60)}:0${Math.floor(a.currentTime%60)}`
-      } else {
-        text.innerHTML = `0${Math.floor(a.currentTime/60)}: ${Math.floor(a.currentTime%60)}`
-      }
-    
-  }
+  
   }
 
 document.getElementById('play').addEventListener('click', ()=>{
