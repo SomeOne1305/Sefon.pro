@@ -8,7 +8,46 @@ window.addEventListener('scroll', ()=>{
     }
 })
 
-
+let musicSources = [
+    {
+        ArtistName: 'Фати Царикаева',
+        ArtistSong: 'Ой Мама',
+        songUrl: './musics/music1.mp3',
+    },
+    {
+        ArtistName: 'Ева Власова feat. Сулима',
+        ArtistSong: 'Somebody',
+        songUrl: './musics/music2.mp3',
+    },
+    {
+        ArtistName: 'ANNA ASTI',
+        ArtistSong: 'Повело',
+        songUrl: './musics/music3.mp3',
+    },
+    {
+        ArtistName: 'ANNA ASTI',
+        ArtistSong: 'Сорри',
+        songUrl: './musics/music4.mp3',
+    },
+    {
+        ArtistName: 'Aleks Ataman & Finik.Finya',
+        ArtistSong: 'Ой, Подзабыли',
+        songUrl: './musics/music5.mp3',
+    },
+    {
+        ArtistName: 'Kenan & Suleyman',
+        ArtistSong: 'Не Похожа',
+        songUrl: './musics/music6.mp3',
+    }
+];
+let writeNames = document.querySelectorAll('.MusicName h4')
+let writeSongs = document.querySelectorAll('.MusicName span')
+writeNames.forEach((item, index)=>{
+    item.innerHTML = musicSources[index].ArtistName
+})
+writeSongs.forEach((item, index)=>{
+    item.innerHTML = musicSources[index].ArtistSong
+})
 
 let icon = document.querySelectorAll('.playOrPause i.fa');
 let btns = document.querySelectorAll('.playOrPause');
@@ -56,7 +95,9 @@ function playMusic(item, index) {
         document.querySelector('.pauseAndplay i.fa').classList.remove('fa-play')
         document.querySelector('.pauseAndplay i.fa').classList.add('fa-pause')
         audio.play()
-        item.classList.add('isActive')
+        item.classList.add('isActive');
+        document.querySelector('.timer').style.right = '2%';
+        document.querySelector('.timer').style.opacity = 1;
 }
 function pauseMusic(item, index) {
             icon[index].classList.remove('fa-pause')
@@ -64,7 +105,9 @@ function pauseMusic(item, index) {
             document.querySelector('.pauseAndplay i.fa').classList.add('fa-play')
             document.querySelector('.pauseAndplay i.fa').classList.remove('fa-pause')
             audio.pause()
-            item.classList.add('isPause')
+            item.classList.add('isPause');
+            document.querySelector('.timer').style.right = '-100%';
+            document.querySelector('.timer').style.opacity = 0;
 }
 function fullDur() {
     let duration = audio.duration
@@ -77,6 +120,37 @@ function fullDur() {
     }else {
         document.querySelector('.fullDuration').innerHTML = `${min}` + ':' + `${sec}`
     }
+    let currentTime = Math.floor(audio.currentTime)
+    let CurMin = Math.floor(currentTime/60);
+    let CurSec = Math.floor(currentTime%60);
+    if (currentTime < 10) {
+        document.querySelector('.moments').innerHTML =`00:0${currentTime}`
+        text.innerHTML =`00:0${currentTime}`
+    } else if(currentTime >= 10 && currentTime < 60){
+        document.querySelector('.moments').innerHTML =`00:${currentTime}`
+        text.innerHTML =`00:${currentTime}`
+    }else if(currentTime >= 60 && CurSec < 10){
+        document.querySelector('.moments').innerHTML = `0${CurMin}:0${CurSec}`
+        text.innerHTML = `0${CurMin}:0${CurSec}`
+    }else if(currentTime >= 60 && CurSec >= 10){
+        document.querySelector('.moments').innerHTML = `0${CurMin}:${CurSec}`
+        text.innerHTML = `0${CurMin}:${CurSec}`
+    }
+}
+let chart = document.querySelector('.circular-chart');
+let text = document.querySelector('.text');
+
+console.log(text);
+document.querySelector('b').addEventListener('click', ()=>{
+  document.querySelector('.timer').style.right = '-100%';
+    document.querySelector('.timer').style.opacity = 0;
+})
+
+function update(e) {
+    const {duration, currentTime} = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    na()
+    chart.querySelector('.circle').setAttribute('stroke-dasharray', `${progressPercent}, 100`)
 }
 btns.forEach((item, index)=>{
    let ar = index
@@ -158,6 +232,7 @@ function updateProgress(e){
     const {duration, currentTime} = e.srcElement;
     const progressPercent = (currentTime / duration) * 100;
     document.querySelector('.durationProgress').style.width = `${progressPercent}%`
+    chart.querySelector('.circle').setAttribute('stroke-dasharray', `${progressPercent}, 100`)
     audio.onloadeddata = fullDur();
 }
 function setProgress(e){
@@ -167,75 +242,11 @@ function setProgress(e){
     audio.currentTime = (clickX / width) * duration;
 }
 document.querySelector('.musicDurationContainer').addEventListener('click', setProgress)
-document.querySelector('#audio').addEventListener('timeupdate', updateProgress);
+document.querySelector('#audio').addEventListener('timeupdate', updateProgress , update);
 
 
-let musicSources = [
-    {
-        ArtistName: 'Фати Царикаева',
-        ArtistSong: 'Ой Мама',
-        songUrl: './musics/music1.mp3',
-    },
-    {
-        ArtistName: 'Ева Власова feat. Сулима',
-        ArtistSong: 'Somebody',
-        songUrl: './musics/music2.mp3',
-    },
-    {
-        ArtistName: 'ANNA ASTI',
-        ArtistSong: 'Повело',
-        songUrl: './musics/music3.mp3',
-    },
-    {
-        ArtistName: 'ANNA ASTI',
-        ArtistSong: 'Сорри',
-        songUrl: './musics/music4.mp3',
-    },
-    {
-        ArtistName: 'Aleks Ataman & Finik.Finya',
-        ArtistSong: 'Ой, Подзабыли',
-        songUrl: './musics/music5.mp3',
-    },
-    {
-        ArtistName: 'Kenan & Suleyman',
-        ArtistSong: 'Не Похожа',
-        songUrl: './musics/music6.mp3',
-    }
-];
-let writeNames = document.querySelectorAll('.MusicName h4')
-let writeSongs = document.querySelectorAll('.MusicName span')
-writeNames.forEach((item, index)=>{
-    item.innerHTML = musicSources[index].ArtistName
-})
-writeSongs.forEach((item, index)=>{
-    item.innerHTML = musicSources[index].ArtistSong
-})
-let songIndex =  btns.length
-
-
-function loadSong(sib){
-    audio.src = `${musicSources[songIndex].songUrl}`
-}
 function prevSong(){
-    songIndex--;
-
-    if(songIndex < 0){
-        songIndex = songs.length - 1;
-    }
-
-    loadSong(songs[songIndex]);
-    playSong()
-
+    let ind = musicSources.findIndex((element)=> audio.getAttribute('src'))
+    console.log(ind);
 }
-
-function nextSong(){
-    songIndex++;
-
-    if(songIndex > songs.length -1){
-        songIndex = 0;
-    }
-
-   loadSong(songs[songIndex]);
-   playSong()
-
-}
+prevSong()

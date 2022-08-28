@@ -1,18 +1,36 @@
+.timer{
+  position: relative;
+  width: 150px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.300);
+  position: fixed;
+  top: 50%;
+  right: -100%;
+  opacity: 0;
+  z-index: 1;
+  transition: 1s linear;
+}
+b{
+  cursor:pointer;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
 .text{
-    font-family: consolas;
-    font-size: 10px;
-    text-align: center;
-  }
-  .circle-bg {
-    fill: none;
-    stroke: #eee;
-    stroke-width: 3.8;
-  }
+  font-family: consolas;
+  font-size: 10px;
+  text-align: center;
+}
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
 .circular-chart {
-  display: block;
-  margin: 10px auto;
-  max-width: 100px;
-  max-height: 100px;
+display: block;
+margin: 10px auto;
+max-width: 130px;
+max-height: 130px;
 }
 
 .circle {
