@@ -114,7 +114,6 @@ nav{
     width: 100%;
     height: auto;
     font-family: 'Roboto', sans-serif;
-    border: 1px solid red;
     display: grid;
     grid-template-columns: 65% 35%;
     padding: 10px 0 0 0;
@@ -557,7 +556,6 @@ footer > p{
 .leftSide{
     height: 100%;
     width: 22%;
-    border: 1px solid red;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -565,7 +563,6 @@ footer > p{
 .rightSide{
     width: 30%;
     height: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

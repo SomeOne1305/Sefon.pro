@@ -109,7 +109,6 @@ nav{
     width: 100%;
     height: auto;
     font-family: 'Roboto', sans-serif;
-    border: 1px solid red;
     display: grid;
     grid-template-columns: 75% 25%;
     padding: 10px 0 0 0;
@@ -366,7 +365,6 @@ nav{
     height: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid red;
 }
 .artistImage{
     max-height: 200px;

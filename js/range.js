@@ -1,6 +1,5 @@
 let input = document.querySelector('#range');
 input.addEventListener('input', ()=>{
-    console.log(input.value / 100);
     audio.volume = input.value / 100
 })
 

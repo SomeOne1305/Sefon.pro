@@ -236,4 +236,8 @@ function create() {
 }
 
 
-document.querySelector('.sendComment').addEventListener('click', create)
+document.querySelector('.sendComment').addEventListener('click', ()=>{
+    inText.innerHTML = ""
+    Name.innerHTML = "";
+    create()
+})

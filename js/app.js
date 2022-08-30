@@ -140,7 +140,6 @@ function fullDur() {
 let chart = document.querySelector('.circular-chart');
 let text = document.querySelector('.text');
 
-console.log(text);
 document.querySelector('b').addEventListener('click', ()=>{
   document.querySelector('.timer').style.right = '-100%';
     document.querySelector('.timer').style.opacity = 0;
@@ -243,10 +242,3 @@ function setProgress(e){
 }
 document.querySelector('.musicDurationContainer').addEventListener('click', setProgress)
 document.querySelector('#audio').addEventListener('timeupdate', updateProgress , update);
-
-
-function prevSong(){
-    let ind = musicSources.findIndex((element)=> audio.getAttribute('src'))
-    console.log(ind);
-}
-prevSong()
